@@ -36,7 +36,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             items: [
               { text: 'grafana', link: '/ops/grafana/' },
               { text: 'prometheus', link: '/ops/prometheus/' },
-              { text: 'zabbix', link: '/ops/zabbix/' },
             ],
           },
           {
@@ -197,7 +196,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         content: '博客,个人技术博客,运维,运维开发,,技术文档,学习,面试,shell,linux,python,git,github,markdown,mysql',
       },
     ],
-    // ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
+    ['meta', { name: 'baidu-site-verification', content: 'code-9jOwdXglus' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
     // [
     //   'script',
