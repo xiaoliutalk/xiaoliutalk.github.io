@@ -142,12 +142,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
       name: 'lgx', // 必需
-      link: 'https://www.lgxblog.top', // 可选的
+      link: 'https://www.lgxblog.cn', // 可选的
     },
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'https://www.lgxblog.top/img/logo.jpg',
+      avatar: 'https://www.lgxblog.cn/img/logo.jpg',
       name: 'Lgx',
       slogan: '运维届的小菜鸡',
     },
