@@ -345,7 +345,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         options: {
           clientID: '765b951f88de96db4b4a',
           clientSecret: '2488a227f801a14e128e7aaf4e321271e876a71c',
-          repo: 'MyBlog', // GitHub 仓库
+          repo: '23095100.github.io', // GitHub 仓库
           owner: '23095100', // GitHub仓库所有者
           admin: ['23095100'], // 对仓库有写权限的人
           // distractionFreeMode: true,
