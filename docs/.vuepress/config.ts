@@ -42,6 +42,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             text: '学习笔记',
             items: [
               { text: '《核心系统命令实战》', link: '/note/coreSystemCommand/' },
+              { text: '《MySQL 是怎样运行的：从根儿上理解 MySQL》', link: '/note/MySQLnote/' },
             ],
           },
         ],
