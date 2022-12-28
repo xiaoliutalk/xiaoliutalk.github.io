@@ -1,6 +1,7 @@
 # npm
 package-lock.json
 node_modules
+yarn-errror*.log
 
 # yarn
 yarn.lock

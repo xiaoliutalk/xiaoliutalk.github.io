@@ -168,9 +168,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           link: 'https://github.com/23095100',
         },
         {
-          iconClass: 'icon-erji',
-          title: '听音乐',
-          link: 'https://music.163.com/#/playlist?id=755597173',
+          iconClass: 'icon-gitee',
+          title: 'Gitee',
+          link: 'https://gitee.com/lgx_248920070',
         },
       ],
     },
@@ -197,7 +197,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         content: '博客,个人技术博客,运维,运维开发,,技术文档,学习,面试,shell,linux,python,git,github,markdown,mysql',
       },
     ],
-    ['meta', { name: 'baidu-site-verification', content: 'code-9jOwdXglus' }], // 百度统计的站长验证（你可以去掉）
+    ['meta', { name: 'baidu-site-verification', content: 'code-Gq97EyHDpP' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
     // [
     //   'script',
