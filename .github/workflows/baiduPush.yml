@@ -6,7 +6,7 @@ name: baiduPush
 on:
   push:
   schedule:
-    - cron: '0 23 * * *' # https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows#scheduled-events-schedule
+    - cron: '0 16 * * *'  # 每天UTC时间 16:00 对应北京时间 00:00
     # - cron: '*/5 * * * *' # 每5分钟一次，测试用
 jobs:
   bot:
