@@ -8,6 +8,9 @@ import dayjs from 'dayjs'
 import baiduCode from './config/baiduCode' // 百度统计hm码
 import htmlModules from './config/htmlModules' // 自定义插入的html块
 
+const DOMAIN_NAME = 'xiaoliutalk.cn' // 域名 (不带https)
+const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
+
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
   theme: 'vdoing', // 使用npm包主题
   // theme: resolve(__dirname, '../../vdoing'), // 使用本地主题
@@ -15,14 +18,15 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: "Lgx's blog",
-      description: '个人博客',
+      title: "",
+      description: '小刘Talk',
     }
   },
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
 
   // 主题配置
   themeConfig: {
+
     // 导航配置
     nav: [
       { text: '首页', link: '/' },
@@ -52,7 +56,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: '专题',
         link: '/topic/',
         items: [
-          { text: '软考中级', link: '/wanggong/' },
+          { text: '软考', link: '/ruankao/' },
           { text: '博客搭建', link: '/pages/56a2b5/' },
           { text: 'git', link: '/pages/d7e255/' },
         ],
@@ -88,7 +92,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         // items: [
         //   { text: '网站', link: '/pages/beb6c0bd8a66cea6/' },
         //   { text: '资源', link: '/pages/eee83a9211a70f9d/' },
-        //   { text: 'Vue资源', link: '/pages/12df8ace52d493f6/' },
         // ],
       },
       {
@@ -102,8 +105,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
-    logo: '/img/logo.jpg', // 导航栏logo
-    // repo: 'xugaoyi/vuepress-theme-vdoing', // 导航栏右侧生成Github链接
+    logo: '/img/logo.png', // 导航栏logo
+    repo: 'xiaoliutalk/xiaoliutalk.github.io', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
@@ -143,14 +146,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
-      name: 'lgx', // 必需
-      link: 'https://www.lgxblog.cn', // 可选的
+      name: '小刘', // 必需
+      //link: 'https://www.xiaoliutalk.cn', // 可选的
     },
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'https://www.lgxblog.cn/img/logo.jpg',
-      name: 'Lgx',
+      avatar: 'https://www.xiaoliutalk.cn/img/logo.png',
+      name: '小刘说',
       slogan: '运维届的小菜鸡',
     },
 
@@ -166,26 +169,27 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         {
           iconClass: 'icon-github',
           title: 'GitHub',
-          link: 'https://github.com/23095100',
+          link: 'https://github.com/xiaoliutalk',
         },
         {
           iconClass: 'icon-gitee',
           title: 'Gitee',
-          link: 'https://gitee.com/lgx_248920070',
+          link: 'https://gitee.com/xiaoliuTalk',
         },
       ],
     },
 
     // 页脚信息
     footer: {
-      createYear: 2022, // 博客创建年份
+      createYear: 2023, // 博客创建年份
       copyrightInfo:
-        'Lgx | <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备2022000415号</a>', // 博客版权信息，支持a标签或换行标签</br>
+        'xiaoliutalk', // 博客版权信息，支持a标签或换行标签</br>
     },
 
     // 自定义hmtl(广告)模块
     htmlModules
   },
+
 
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
   head: [
@@ -195,10 +199,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       'meta',
       {
         name: 'keywords',
-        content: '博客,个人技术博客,运维,运维开发,,技术文档,学习,面试,shell,linux,python,git,github,markdown,mysql',
+        content: '博客,个人技术博客,运维,运维开发,技术文档,学习,面试,shell,linux,python,git,github,markdown,mysql,k8s,kubernetes',
       },
     ],
-    ['meta', { name: 'baidu-site-verification', content: 'code-Gq97EyHDpP' }], // 百度统计的站长验证（你可以去掉）
+    ['meta', { name: 'baidu-site-verification', content: 'codeva-0ulOnZ5mxo' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
     // [
     //   'script',
@@ -213,10 +217,16 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   // 插件配置
   plugins: <UserPlugins>[
+    [
+      "sitemap", // 网站地图
+      {
+        hostname: WEB_SITE,
+      },
+    ],
     // 网站变黑白 
     ['vuepress-plugin-graysite',{
-      startDate: '2022-05-12 00:00:00',
-      endDate: '2022-05-12 23:59:59'
+      startDate: '2024-05-12 00:00:00',
+      endDate: '2024-05-12 23:59:59'
     }],
     // markdown文件支持 TeX 语法
     [
@@ -282,31 +292,35 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 'fulltext-search',
 
     // 可以添加第三方搜索链接的搜索框（继承原官方搜索框的配置参数）
-    // 'thirdparty-search': {
-    //   thirdparty: [
-    //     {
-    //       title: '在MDN中搜索',
-    //       frontUrl: 'https://developer.mozilla.org/zh-CN/search?q=', // 搜索链接的前面部分
-    //       behindUrl: '', // 搜索链接的后面部分，可选，默认 ''
-    //     },
-    //     {
-    //       title: '在Runoob中搜索',
-    //       frontUrl: 'https://www.runoob.com/?s=',
-    //     },
-    //     {
-    //       title: '在Vue API中搜索',
-    //       frontUrl: 'https://cn.vuejs.org/v2/api/#',
-    //     },
-    //     {
-    //       title: '在Bing中搜索',
-    //       frontUrl: 'https://cn.bing.com/search?q=',
-    //     },
-    //     {
-    //       title: '通过百度搜索本站的',
-    //       frontUrl: 'https://www.baidu.com/s?wd=site%3Axugaoyi.com%20',
-    //     },
-    //   ],
-    // },
+    [
+      'thirdparty-search',
+      {
+        thirdparty: [
+          // {
+          //   title: '在MDN中搜索',
+          //   frontUrl: 'https://developer.mozilla.org/zh-CN/search?q=', // 搜索链接的前面部分
+          //   behindUrl: '', // 搜索链接的后面部分，可选，默认 ''
+          // },
+          // {
+          //   title: '在Runoob中搜索',
+          //   frontUrl: 'https://www.runoob.com/?s=',
+          // },
+          // {
+          //   title: '在Vue API中搜索',
+          //   frontUrl: 'https://cn.vuejs.org/v2/api/#',
+          // },
+          {
+            title: '在Bing中搜索',
+            frontUrl: 'https://cn.bing.com/search?q=',
+          },
+          {
+            title: '在Baidu中搜索',
+            frontUrl: `https://www.baidu.com/s?wd=site%3A${DOMAIN_NAME}%20`,
+          },
+        ],
+      }
+    ],
+
 
     [
       'one-click-copy', // 代码块复制按钮
@@ -345,11 +359,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       {
         choosen: 'gitalk',
         options: {
-          clientID: 'cf65120e9aaa66ff8fa0',
+          clientID: 'ade1988617b93f5b12df',
           clientSecret: '7a0c7697a408f629cc5a4870787f077aea22f204',
-          repo: '23095100.github.io', // GitHub 仓库
-          owner: '23095100', // GitHub仓库所有者
-          admin: ['23095100'], // 对仓库有写权限的人
+          repo: 'xiaoliutalk.github.io', // GitHub 仓库
+          owner: 'xiaoliutalk', // GitHub仓库所有者
+          admin: ['xiaoliutalk'], // 对仓库有写权限的人
           // distractionFreeMode: true,
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
