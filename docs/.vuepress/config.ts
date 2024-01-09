@@ -364,7 +364,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           repo: 'xiaoliutalk.github.io', // GitHub 仓库
           owner: 'xiaoliutalk', // GitHub仓库所有者
           admin: ['xiaoliutalk'], // 对仓库有写权限的人
-          // distractionFreeMode: true,
+          createIssueManually: true, // 是否允许自动创建 GitHub issue
+          distractionFreeMode: true, // 免打扰模式，类似于facebook，使页面不再打扰，默认true
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
           title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
