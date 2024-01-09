@@ -18,9 +18,7 @@ bannerBg: /img/bg.jpg # auto => 网格纹背景(有bodyBgImg时无背景)，默�
 <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script> -->
 <!-- 小熊猫 -->
 <!-- <img src="/img/panda-waving.png" class="panda no-zoom" style="width: 130px;height: 115px;opacity: 0.8;margin-bottom: -4px;padding-bottom:0;position: fixed;bottom: 0;left: 0.5rem;z-index: 1;"> -->
-::: center
-## 🌎访问地球🌎
-:::
+
 <html><body><script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5xgrzbkd2la&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script></body></html>
 <br>
 

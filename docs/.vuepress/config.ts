@@ -56,7 +56,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: '专题',
         link: '/topic/',
         items: [
-          { text: '软考', link: '/ruankao/' },
           { text: '博客搭建', link: '/pages/56a2b5/' },
           { text: 'git', link: '/pages/d7e255/' },
         ],
@@ -183,9 +182,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     footer: {
       createYear: 2023, // 博客创建年份
       copyrightInfo:
-        'xiaoliutalk', // 博客版权信息，支持a标签或换行标签</br>
+        '<a href="https://ipw.cn/ipv6webcheck/?site=www.xiaoliutalk.cn" title="本站支持IPv6访问" target="_blank"><img style="display:inline-block;vertical-align:middle" alt="本站支持IPv6访问" src="https://static.ipw.cn/icon/ipv6-s3.svg"></a> \
+        <a href="https://ipw.cn/ssl/?site=www.xiaoliutalk.cn" title="本站支持SSL安全访问" target="_blank"><img style="display:inline-block;vertical-align:middle" alt="本站支持SSL安全访问" src="https://static.ipw.cn/icon/ssl-s3.svg"></a>', // 博客版权信息，支持a标签或换行标签</br>
     },
-
     // 自定义hmtl(广告)模块
     htmlModules
   },
@@ -245,6 +244,16 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         size: 2, // size of the particle, default: 2
         shape: 'star', // ['star' | 'circle'] shape of the particle, default: 'star'
         zIndex: 999999999, // z-index property of the canvas, default: 999999999
+      }
+    ],
+    [
+      "dynamic-title", // 网页标题动态变化
+      {
+        showIcon: "/favicon.ico",
+        showText: "(/≧▽≦/)咦！又好了！",
+        hideIcon: "/failure.ico",
+        hideText: "(●—●)喔哟，崩溃啦！",
+        recoverTime: 2000
       }
     ],
     [
@@ -310,12 +319,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           //   frontUrl: 'https://cn.vuejs.org/v2/api/#',
           // },
           {
-            title: '在Bing中搜索',
-            frontUrl: 'https://cn.bing.com/search?q=',
-          },
-          {
             title: '在Baidu中搜索',
             frontUrl: `https://www.baidu.com/s?wd=site%3A${DOMAIN_NAME}%20`,
+          },
+          {
+            title: '在Bing中搜索',
+            frontUrl: 'https://cn.bing.com/search?q=',
           },
         ],
       }
