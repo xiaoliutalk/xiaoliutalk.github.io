@@ -360,7 +360,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         choosen: 'gitalk',
         options: {
           clientID: 'ade1988617b93f5b12df',
-          clientSecret: '7a0c7697a408f629cc5a4870787f077aea22f204',
+          clientSecret: '2c201222653f3c5660851593b41b1fdfd8ecb558',
           repo: 'xiaoliutalk.github.io', // GitHub 仓库
           owner: 'xiaoliutalk', // GitHub仓库所有者
           admin: ['xiaoliutalk'], // 对仓库有写权限的人
