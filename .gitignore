@@ -13,7 +13,7 @@ yarn.lock
 docs/.vuepress/dist
 
 # 百度链接推送
-urls.txt
+urls
 
 # mac
 .DS_Store

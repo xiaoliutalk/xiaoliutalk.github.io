@@ -9,21 +9,27 @@ const readFileList = require('./modules/readFileList');
 const urlsRootDir = path.join(__dirname, '..', 'urls')
 const DOMAIN = process.argv.splice(2)[0]; // 获取命令行传入的参数
 
+let linkCount = 0;
+let currentUrlFileIndex = 1;
+const linksPerFile = 19;
+
 if (DOMAIN) {
   main();
 } else {
   console.log(chalk.red('请在运行此文件时指定一个你要进行百度推送的域名参数，例：node utils/baiduPush.js https://www.xiaoliutalk.cn'))
 }
 
-let linkCount = 0;
-let currentUrlFileIndex = 1;
-const linksPerFile = 20;
+
 
 /**
  * 主体函数
  */
 function main() {
-  const urlsFilePath = path.join(urlsRootDir, `urls_${currentUrlFileIndex}.txt`);
+  // 检查并创建 urls 目录（如果不存在）
+  if (!fs.existsSync(urlsRootDir)) {
+    fs.mkdirSync(urlsRootDir, { recursive: true });
+  }
+  let urlsFilePath = path.join(urlsRootDir, `urls_${currentUrlFileIndex}.txt`);
   fs.writeFileSync(urlsFilePath, DOMAIN);
 
   const files = readFileList(); // 读取所有md文件数据
