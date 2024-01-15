@@ -11,7 +11,7 @@ const DOMAIN = process.argv.splice(2)[0]; // 获取命令行传入的参数
 
 let linkCount = 0;
 let currentUrlFileIndex = 1;
-const linksPerFile = 19;
+const linksPerFile = 9;
 
 if (DOMAIN) {
   main();
